@@ -1,4 +1,6 @@
-import 'package:Flutter_fighter/dev_page.dart';
+import 'package:Flutter_fighter/bloc/base_bloc.dart';
+import 'package:Flutter_fighter/page/bloc_counter.dart';
+import 'package:Flutter_fighter/page/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -27,7 +29,11 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: DevPage(),
+//      home: HomePage(),
+      home: BlocProvider<BlocCounter>(
+          bloc: BlocCounter(),
+          child: HomePage()
+      ),
     );
   }
 }
